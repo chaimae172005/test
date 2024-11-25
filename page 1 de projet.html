@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Cinema</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+    }
+  
+    /* Header container for logo animation */
+    .container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: moveToTop 4s ease-in-out 4s forwards; /* Move up after animations */
+    }
+  
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /* CLUB Styling */
+    .club {
+      background-color: white;
+      color: black;
+      font-size: 80px;
+      font-weight: bold;
+      padding: 10px 30px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out 0.5s forwards; /* Fades in after 0.5 seconds */
+    }
+  
+    /* CINEMA Styling */
+    .cinema {
+      background-color: transparent;
+      color: white;
+      font-size: 80px;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-top: 3px solid white;
+      border-bottom: 3px solid white;
+      opacity: 0;
+      position: relative;
+      left: -200px; /* Start off-screen */
+      animation: slideIn 2s 1.5s ease-out forwards; /* Slide in after 1.5 seconds */
+    }
+  
+    /* Tagline Styling */
+    .tagline {
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s 3.5s forwards; /* Fades in after 3.5 seconds */
+    }
+  
+    /* Content Section */
+    .content {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1); /* Centered and wider */
+      opacity: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      animation: fadeInBackground 4s ease-in 6s forwards; /* Fade in after logo moves */
+      width: 80%; /* Increase overall content width */
+    }
+  
+    .content img {
+      width: 50%; /* Wider image */
+      aspect-ratio: 5 / 4;
+      object-fit: cover; /* Ensure the image fills its container */
+      object-position: 0 -30%; /* Crop the top of the image more */
+    }
+  
+    .text {
+      width: 50%; /* Increase width to make the text area wider */
+      font-size: 18px;
+      line-height: 1.6;
+      margin-left: 30px; /* Increase space between image and text */
+    }
+
+    .text h2 {
+      color: #BAB86C;  /* Change the color to #BAB86C */
+      text-align: center;  /* Center the text */
+      font-size: 24px;  /* Adjust the font size if needed */
+      border: 3px solid #BAB86C; /* Add a border with color #BAB86C */
+      padding: 10px;  /* Add padding inside the border */
+      display: inline-block; /* Make the border wrap tightly around the text */
+    }
+
+    /* New Smaller Text Styling */
+    .small-text {
+      font-size: 16px; /* Smaller text */
+      text-align: center; /* Center the text */
+      margin-bottom: 20px; /* Add spacing below it */
+      color: #BE9D6A; /* Set the color to #BE9D6A */
+    }
+  
+    /* Footer Button */
+    .footer {
+      position: absolute;
+      bottom: 70px;
+      right: 50px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInButton 4s ease-in 6.5s forwards;
+    }
+  
+    .button {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+  
+    .footer p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: white;
+    }
+  
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        left: -200px; /* Start off-screen */
+      }
+      100% {
+        opacity: 1;
+        left: 0; /* Slide next to "CLUB" */
+      }
+    }
+  
+    @keyframes moveToTop {
+      0%, 20% {
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1); /* Stay big and centered */
+      }
+      100% {
+        top: 0;
+        transform: translate(-50%, 0) scale(0.5); /* Move to top and shrink */
+      }
+    }
+  
+    @keyframes fadeInBackground {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  
+    @keyframes fadeInButton {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo animation container -->
+  <div class="container">
+    <div class="title">
+      <div class="club">CLUB</div>
+      <div class="cinema">CINEMA</div>
+    </div>
+    <div class="tagline">We aim to entertain, we are cinema</div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-11-23 at 15.32.44.jpeg" alt="Cinema">
+    <div class="text">
+      <h2 align="center">CLUB SPÉCIALISÉ DANS LA CRÉATION DE CONTENUS AVEC TOUCHE ARTISTIQUE</h2>
+      
+      <!-- Smaller and centered text -->
+      <div class="small-text">
+        NOTRE CLUB VOUS AIDERA À DÉVELOPPER
+      </div>
+
+      <p align="center">
+        VOS COMPÉTENCES CULTURELLES ET ARTISTIQUES EN MUSIQUE ET CRÉATION DE CONTENUS
+        ( PRODUCTIONS MUSICALES – MONTAGE VIDÉO – PHOTOGRAPHIE – CONCEPTION GRAPHIQUE )
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer Button -->
+  <div class="footer">
+    <button class="button" onclick="window.location.href='pr%201.html'"></button>
+    <p>Click here</p>
+  </div>
+</body>  
+</html>
